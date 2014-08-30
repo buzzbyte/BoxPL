@@ -2,6 +2,7 @@
 
 Open Box
     # This is a simple program written in BoxPL.
+    wrap <The Test Box> progName
     pack <What is your first name? > fname
     pack <What is your last name? > lname
     unpack [Hello ]
@@ -10,6 +11,8 @@ Open Box
     unwrap lname
     unpack [!]
     makeline
-    unpack [Welcome!!]
+    unpack [Welcome to ]
+    unwrap progName
+    unpack [!!]
     makeline
 Close Box
