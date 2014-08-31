@@ -15,7 +15,7 @@ using namespace std;
 #define VERSION "0.2.2"
 #define DEBUG 1
 
-string keywords[] = {"Open Box", "Close Box", "pack", "unpack", "unwrap", "makeline"};
+string keywords[] = {"Open Box", "Close Box", "pack", "unpack", "unwrap", "makeline", "wrap"};
 int indentVal = 4;
 
 bool startFound = false;
@@ -104,6 +104,17 @@ void syntaxCheck(string keyword, string line) {
 		if(line != keyword) {
 			c_err("'" + keyword + "' has no parameters");
 		}
+	} else if (keyword == keywords[6]) {
+		// Syntax: wrap <{prompt}> {variable}
+		string reqTokens[] = {" <", "> "};
+		for (int i = 0; i < sizeof(reqTokens)/sizeof(reqTokens[0]); ++i) {
+			if(line.find(reqTokens[i]) == string::npos) {
+				c_err("Missing token, '" + reqTokens[i] + "'");
+			}
+		}
+		if(line.find(">")+2 == string::npos) {
+			c_err("Missing variable");
+		}
 	}
 }
 
@@ -125,6 +136,15 @@ void doCmd(string keyword, string line) {
 		cout << boxvars[splitUWrap[1]];
 	} else if (keyword == keywords[5]) {
 		cout << endl;
+	} else if (keyword == keywords[6]) {
+		///string splitPack[] = {line.substr(0,4), line.substr(6, line.find(">")-6), line.substr(line.find(">")+2)};
+		string splitPack[] = {line.substr(0,4), // "wrap"
+							  line.substr(line.find("<")+1, line.find(">")-(line.find("<")+1)), // "{prompt}"
+							  line.substr(line.find(">")+2)}; // "{variable}"
+		//cout << "[INPUT] " << splitPack[1];
+		//cin >> boxvars[splitPack[2]];
+		boxvars[splitPack[2]] = splitPack[1];
+		debug("Storing '" + splitPack[1] + "' in variable '" + splitPack[2] + "'.");
 	}
 }
 
