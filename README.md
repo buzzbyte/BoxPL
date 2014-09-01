@@ -47,8 +47,14 @@ Download the ZIP (see above) and extract it to your working directory (e.g. a fo
 
 On a Linux shell (or on Windows with Cygwin, MinGW, or anything similar), `cd` to your working directory then `make` and wait for the compiler to finish. The compiled binary will be under the `ubuild/` directory (unless you edited the Makefile).
 
+Contact
+-------
+If problems should arise or if you have any questions or suggestions, you can [create an "issue"](https://github.com/buzzbyte/BoxPL/issues/new) on GitHub (for right now) and I will address them as usual. :smile:
+
 Licence
 -------
+Copyright &copy; 2014  Mohamed Salah (buzzbyte)
+
 This software is licenced under the GNU GPL v3.
 
 A copy of the licence should be [available with this software](https://github.com/buzzbyte/BoxPL/blob/master/LICENSE). If it's not, see http://www.gnu.org/licenses/gpl.html.
