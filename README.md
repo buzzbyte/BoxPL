@@ -18,15 +18,37 @@ Close Box
 How to Use the Interpreter (boxlang)
 ------------------------------------
 ###Linux
-In a Linux terminal at the boxlang's directory, type `./boxlang` followed by the BoxPL filename to run the interpreter on that file.
+*Prebuilt only for amd64 Linux architectures. If you use other, you would have to build it yourself from source (see [Building from source](#building-from-source)).*
+
+In a Linux terminal at the directory where boxlang is located (e.g. builds/), type `./boxlang` followed by the BoxPL filename to run the interpreter on that file.
 For example, to run the included test sample under the current directory:
 ```unix
 ./boxlang test-box.bpl
 ```
 
 ###Windows
-In a Windows command prompt at the boxlang-win's directory, type `boxlang-win` followed by the BoxPL filename to run the interpreter on that file.
+In a Windows command prompt at the directory where boxlang-win32.exe is located (e.g. builds/), type `boxlang-win32` followed by the BoxPL filename to run the interpreter on that file.
 For example, to run the included test sample under the current directory:
 ```dos
 boxlang-win32 test-box.bpl
 ```
+
+How to get it
+-------------
+You could get the interpreter in two ways, either download the pre-built version on GitHub (might not be the latest), or build it yourself from source.
+
+###Downloading Pre-built
+You can download the whole zip file from GitHub by clicking the "Download ZIP" button on the right of the repository page (or you can clone it).
+
+If you only want the binary, go to the builds folder on GitHub then choose the appropiate pre-build for your machine.
+
+###Building from source
+Download the ZIP (see above) and extract it to your working directory (e.g. a folder under your home/user directory).
+
+On a Linux shell (or on Windows with Cygwin, MinGW, or anything similar), `cd` to your working directory then `make` and wait for the compiler to finish. The compiled binary will be under the `ubuild/` directory (unless you edited the Makefile).
+
+Licence
+-------
+This software is licenced under the GNU GPL v3.
+
+A copy of the licence should be [available with this software](https://github.com/buzzbyte/BoxPL/blob/master/LICENSE). If it's not, see http://www.gnu.org/licenses/gpl.html.
