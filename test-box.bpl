@@ -1,4 +1,4 @@
-#!/home/nerdybuzz/Projects/EsoBox/boxlang
+#!/usr/bin/boxlang
 
 Open Box
     # This is a simple program written in BoxPL.
